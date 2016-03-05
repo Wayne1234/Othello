@@ -29,7 +29,7 @@ import javax.swing.JSplitPane;
 
 class GamePanel extends JPanel implements MouseListener {
 
-	static final int Square_L = 33; // length in pixel of a square in the grid
+	static final int Square_L = 50; // length in pixel of a square in the grid
 	static final int Width = 8 * Square_L; // Width of the game board
 	static final int Height = 8 * Square_L; // Width of the game board
 	
