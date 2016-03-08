@@ -54,7 +54,7 @@ public class OthelloAction implements Action<OthelloState> {
 		StringBuilder builder = new StringBuilder();
 		//builder.append("Player ").append(this.player ? "1" : "0").append(" is moving to ");
 		//builder.append("(").append(this.x).append(", ").append(this.y).append(").");
-		int charA = 97; 
+		int charA = 97; //ascii码的97是‘a’
 		builder.append((char)(this.y+charA));
 		builder.append(this.x + 1);
 		return builder.toString();

@@ -46,11 +46,11 @@ public class Game {
 		Action action = this.turn ? this.playerOne.decide(this.currentState) : 
 			this.playerTwo.decide(this.currentState);
 		// Print it to the trace
-		if (PRINT) System.out.println(action);
+		if (PRINT) System.out.println(action+"|");
 		// Try to apply it
 		try {
 			currentState = action.applyTo(currentState);
-			if (PRINT) System.out.println(currentState);
+			if (PRINT) System.out.println(currentState+"|");
 			//System.out.println(currentState);
 			//System.out.println("Heuristic value: "+currentState.heuristic());
 		} catch (InvalidActionException e) {

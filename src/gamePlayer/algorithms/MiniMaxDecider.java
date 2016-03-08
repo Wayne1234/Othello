@@ -21,7 +21,6 @@ import java.util.Map;
  * @version CSE 473
  */
 public class MiniMaxDecider implements Decider {
-	
 	// Are we maximizing or minimizing?
 	private boolean maximize;
 	// The depth to which we should analyze the search space
@@ -54,6 +53,7 @@ public class MiniMaxDecider implements Decider {
 	public Action decide(State state) {
 		// Choose randomly between equally good options
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
+		//System.out.println("value:"+value);
 		List<Action> bestActions = new ArrayList<Action>();
 		// Iterate!
 		int flag = maximize ? 1 : -1;
@@ -61,7 +61,7 @@ public class MiniMaxDecider implements Decider {
 			try {
 				// Algorithm!
 				State newState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);
+				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);//真正的决策部分
 				// Better candidates?
 				if (flag * newValue > flag * value) {
 					value = newValue;
@@ -74,7 +74,7 @@ public class MiniMaxDecider implements Decider {
 			}
 		}
 		// If there are more than one best actions, pick one of the best randomly
-		Collections.shuffle(bestActions);
+		Collections.shuffle(bestActions);//打乱候选集合，最后随机选择第一个。
 		return bestActions.get(0);
 	}
 	
@@ -82,8 +82,8 @@ public class MiniMaxDecider implements Decider {
 	 * The true implementation of the MiniMax algorithm!
 	 * Thoroughly commented for your convenience.
 	 * @param state    The State we are currently parsing.
-	 * @param alpha    The alpha bound for alpha-beta pruning.
-	 * @param beta     The beta bound for alpha-beta pruning.
+     * @param alpha    The alpha bound for alpha-beta pruning.
+     * @param beta     The beta bound for alpha-beta pruning.
 	 * @param depth    The current depth we are at.
 	 * @param maximize Are we maximizing? If not, we are minimizing.
 	 * @return The best point count we can get on this branch of the state space to the specified depth.

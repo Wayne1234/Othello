@@ -9,6 +9,19 @@ import java.util.Random;
 import gamePlayer.Action;
 import gamePlayer.State;
 
+
+/*					参考权值表
+ 					 {100, -5, 10,  5,  5, 10, -5,100},
+					 { -5,-45,  1,  1,  1,  1,-45, -5},
+                     { 10,  1,  3,  2,  2,  3,  1, 10},
+                     {  5,  1,  2,  1,  1,  2,  1,  5},
+                     {  5,  1,  2,  1,  1,  2,  1,  5},
+                     { 10,  1,  3,  2,  2,  3,  1, 10},
+                     { -5,-45,  1,  1,  1,  1,-45, -5},
+                     {100, -5, 10,  5,  5, 10, -5,100}
+ */
+
+
 /**
  * A State in the board game Othello.
  * @author Ashoat Tevosyan
@@ -82,6 +95,7 @@ public class OthelloState implements State {
 	private static void generateTables(short line, byte points, byte depth) {
 		// End case?
 		if (depth == dimension) {
+			System.out.println("line:"+line);
 			if (!isValid(line)) return;
 			pointTable[line + 32768] = points;
 			generateLookupAndMoveValue(line);
@@ -756,7 +770,7 @@ public class OthelloState implements State {
 			winconstant = 0;
 			break;
 		}
-		return this.pieceDifferential() +
+		return this.pieceDifferential() +//
 		   8 * this.moveDifferential() +
 		  300 * this.cornerDifferential() +
 		   1 * this.stabilityDifferential() + 
