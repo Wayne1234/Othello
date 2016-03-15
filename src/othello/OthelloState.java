@@ -10,15 +10,15 @@ import gamePlayer.Action;
 import gamePlayer.State;
 
 
-/*					参考权值表
- 					 {100, -5, 10,  5,  5, 10, -5,100},
-					 { -5,-45,  1,  1,  1,  1,-45, -5},
-                     { 10,  1,  3,  2,  2,  3,  1, 10},
-                     {  5,  1,  2,  1,  1,  2,  1,  5},
-                     {  5,  1,  2,  1,  1,  2,  1,  5},
-                     { 10,  1,  3,  2,  2,  3,  1, 10},
-                     { -5,-45,  1,  1,  1,  1,-45, -5},
-                     {100, -5, 10,  5,  5, 10, -5,100}
+/*	参考权值表
+ 	{100, -5, 10,  5,  5, 10, -5,100},
+	{ -5,-45,  1,  1,  1,  1,-45, -5},
+    { 10,  1,  3,  2,  2,  3,  1, 10},
+	{  5,  1,  2,  1,  1,  2,  1,  5},
+	{  5,  1,  2,  1,  1,  2,  1,  5},
+	{ 10,  1,  3,  2,  2,  3,  1, 10},
+	{ -5,-45,  1,  1,  1,  1,-45, -5},
+	{100, -5, 10,  5,  5, 10, -5,100}
  */
 
 
@@ -40,6 +40,7 @@ public class OthelloState implements State {
 	
 	/**
 	 * 00 = empty; 01 = ignored; 10 = white; 11 = black.
+	 * 棋盘，8*8，[] [] [] [] [] [] [] [] ，short型是一个16位的，每两个二进制位表示一个区域的状态
 	 */
 	
 	// A lookup table to figure out the point differential in a line 
@@ -51,16 +52,16 @@ public class OthelloState implements State {
 	 * Second index is the index of the move... dimension possibilities.
 	 * Third index is the player making the move... 2 players.
 	 */
-	private static short[][][] lookupTable = new short[65536][dimension][2];
+	private static short[][][] lookupTable = new short[65536][dimension][2];//lookuptable究竟是一个什么玩意儿？
 	
 	// Lookup table that has stability metrics for lines.
-	private static float[] stabilityTable = new float[65536];
+	private static float[] stabilityTable = new float[65536];//稳定
 	
 	// Lookup table that has valid moves for lines
 	private static short[][] movesTable = new short[65536][2];
 	
 	// Lookup table storing the random long corresponding to each state of each square on the board
-	private static int[][][] zobristHashes = new int[dimension][dimension][3];
+	private static int[][][] zobristHashes = new int[dimension][dimension][3];//8*8加上三个状态，黑白空，从而生成哈希
 	
 	/**
 	 * The static constructor to generate our tables.
@@ -76,11 +77,11 @@ public class OthelloState implements State {
 	 * board square. Used for hashing the state.
 	 */
 	private static void generateHashValues() {
-		Random r = new Random(45111);
+		Random r = new Random(45111);//随机类
 		for (int i=0; i < dimension; i++) {
 			for (int j=0; j < dimension; j++) {
 				for (int state=0; state < 3; state++) {
-					zobristHashes[i][j][state] = r.nextInt();
+					zobristHashes[i][j][state] = r.nextInt();//生成64*3个随机数
 				}
 			}
 		}
@@ -95,7 +96,7 @@ public class OthelloState implements State {
 	private static void generateTables(short line, byte points, byte depth) {
 		// End case?
 		if (depth == dimension) {
-			System.out.println("line:"+line);
+			//System.out.println("line:"+line);
 			if (!isValid(line)) return;
 			pointTable[line + 32768] = points;
 			generateLookupAndMoveValue(line);
@@ -119,6 +120,7 @@ public class OthelloState implements State {
 	private static byte getSpotOnLine(short line, byte index) {
 		if (index >= dimension) return 1;
 		return (byte)((line >> (index * 2)) & 3);
+		//8个index，乘以2，就对应了16个位，那么我只要将这一串右移这么多位数，最后和0000....11也就是3，与一下，就知道这个index上是00/01/11/10
 	}
 
 	/**
@@ -127,7 +129,7 @@ public class OthelloState implements State {
 	 * @param y The y-coordinate of the spot we want to retrieve.
 	 * @return ' ' if the spot is empty; 'O' if the spot has player 1; 'X' if the spot has player 2.
 	 */
-	public char getSpotAsChar(byte x, byte y) {
+	public char getSpotAsChar(byte x, byte y) {//调用上面的getSpotOnline之后，在一个board上面获取某个位置的图形
 		byte spot = getSpotOnLine(hBoard[x], y);
 		if (spot == 0) return ' ';
 		return spot == 2 ? 'O' : 'X';
@@ -141,9 +143,10 @@ public class OthelloState implements State {
 	 * @return A new line that results from the specified mutation.
 	 */
 	private static short setSpotOnLine(short line, byte index, byte value) {
+		//set肯定就是设置某一个line上的值了，用的同样是位操作，如果是无法设置（超过dimension），直接返回line，也就是不改变
 		if (index >= dimension) return line;
-		short mask = (short)(3 << (index * 2)); 
-		return (short)((line & ~mask) | (value << (index * 2)));
+		short mask = (short)(3 << (index * 2)); //mask可以认为是一个“蒙版”，生成一个short型的，要修改位置全为1，其余位全为0的字串
+		return (short)((line & ~mask) | (value << (index * 2)));//line和mask取反与，也就将待修改位置置为了0，然后再和value移位后的结果或，就达到了修改的目的
 	}
 	
 	/**
@@ -155,6 +158,7 @@ public class OthelloState implements State {
 	 * @return The combined line. 
 	 */
 	private static short combineIntoLine(short left, byte center, short right, byte index) {
+		//leftmask就是一个00000...1111的串，right则是111...000串，在index位置两者均为0
 		short leftMask = (short)((1 << (index * 2)) - 1);
 		short rightMask = (short)~((1 << (index * 2 + 2)) - 1);
 		return (short)((right & rightMask) | (left & leftMask) | (center << (index * 2)));
@@ -165,11 +169,15 @@ public class OthelloState implements State {
 	 * @param line The line we are parsing.
 	 * @return The String we have parsed into.
 	 */
-	private static String lineToString(short line) {
+	private static String lineToString(short line) {//将一个line以string类型存储
+		//例子896对应的是00023000，字符串和数值的高低位是反的linetostring的结果必须反过来才是对应short型的line值
+		//System.out.println("Raw line:"+line);
 		StringBuilder builder = new StringBuilder();
 		for (byte i = 0; i < dimension; i++) {
+			//System.out.println("getSpotOnLine "+getSpotOnLine(line,i));
 			builder.append(getSpotOnLine(line, i));
 		}
+		//System.out.println("String: "+builder.toString());
 		return builder.toString();
 	}
 
@@ -180,7 +188,7 @@ public class OthelloState implements State {
 	 * @param index   The index of the actual move.
 	 * @return A short representing only the changed spots.
 	 */
-	private static short getFlippedSpots(short line, short newLine, byte index) {
+	private static short getFlippedSpots(short line, short newLine, byte index) {//检测的是index位置上的数字有没有变化
 		short mask = (short)~(3 << (index * 2));
 		return (short)((newLine ^ line) & mask);
 	}
@@ -191,12 +199,15 @@ public class OthelloState implements State {
 	 * @return The reversed line.
 	 */
 	private static short reverseLine(short line) {
+		//翻转这个line,暂时存在一个问题，对于转换后超过short型的怎么算？注意，index是从右往左的！
 		short reverse = 0;
+		//System.out.println("raw line:"+line);
 		for (byte i = 0; i < dimension; i++) {
 			reverse = (short)(reverse | getSpotOnLine(line, i));
 			if (i + 1 == dimension) break;
 			reverse = (short)(reverse << 2);
 		}
+		//System.out.println("Reverse line:"+reverse);
 		return reverse;
 	}
 	
@@ -204,6 +215,8 @@ public class OthelloState implements State {
 	 * Check if a line is a valid and possible configuration.
 	 * @param line The line to check.
 	 * @return True if the line is valid; false otherwise.
+	 *
+	 * 00 = empty; 01 = ignored; 10 = white; 11 = black.
 	 */
 	private static boolean isValid(short line) {
 		byte i = 0;
@@ -213,18 +226,18 @@ public class OthelloState implements State {
 			i++;
 			spot = getSpotOnLine(line, i);
 		}
-		if (i == dimension) return false;
+		if (i == dimension) return false;//即如果所有的都是ignored，那么不是Valid
 		// Go through all the non-walls
-		while (spot != 1) {
+		while (spot != 1) {//这个时候已经遍历过了一些ignored的
 			i++;
 			spot = getSpotOnLine(line, i);
 		}
 		// Make sure the second set of walls terminates
-		while (spot == 1 && i < dimension) {
+		while (spot == 1 && i < dimension) {//又做一次ignored遍历这他妈的是什么玩意儿
 			i++;
 			spot = getSpotOnLine(line, i);
 		}
-		return i == dimension;
+		return i == dimension;//也就是说必须是一01结尾的，且开头或中间必须有非01的才是valid
 	}
 	
 	/**
@@ -236,6 +249,7 @@ public class OthelloState implements State {
 		for (byte i = 0; i < dimension; i++) {
 			// Is this spot already set?
 			byte spot = getSpotOnLine(line, i);
+			//System.out.println("line:"+line);
 			if (spot != 0) {
 				if (DEBUG) System.out.println("Can't move on index " + i + "! Already occupied.");
 				if (DEBUG) System.out.println(lineToString(line) + " resolves to itself");
@@ -321,7 +335,13 @@ public class OthelloState implements State {
 	 * Generate a stability value for a particular line.
 	 * @param line The line to generate the value for.
 	 */
-	private static void generateStabilityValue(short line) {
+	private static void generateStabilityValue(short line) {//line本身，即代表这个数组的下标，同时又直接代表这一种组合
+		//System.out.print("the line "+lineToString(line)+" ");
+		//System.out.print("getSpotOnline: ");
+		//for(byte i=dimension-1;i>=0;i--){
+		//	System.out.print(getSpotOnLine(line,i));
+		//}
+		//System.out.println("");
 		float value = 0;
 		byte index = 0; 
 		byte spot = getSpotOnLine(line, index);
@@ -357,17 +377,20 @@ public class OthelloState implements State {
 		// Set the value in the stability table
 		if (DEBUG) System.out.println(lineToString(line) + " resolves to " + value);
 		stabilityTable[line + 32768] = value;
+		//System.out.println("value of the line "+value);
 	}
 	
 	// Whose move is it? True = player 1; false = player 2.
 	public final boolean move;
 	// The bit-board storing horizontal lines
+	//水平的board，在othellostate的构造函数中有大小为8
 	private short[] hBoard; /* board 0 */
 	// The bit-board storing vertical lines
 	private short[] vBoard; /* board 1 */
 	// The bit-boards storing diagonal lines
 	private short[] dBoard1 /* board 2 */, dBoard2; /* board 3 */
 	// Bit-boards representing valid moves
+	//尺寸也是8
 	private short[] p1MoveBoard, p2MoveBoard;
 	// Our parent
 	private OthelloState parent;
@@ -389,7 +412,7 @@ public class OthelloState implements State {
 		this.move = true;
 		this.hBoard = new short[dimension];
 		this.vBoard = new short[dimension];
-		// Diagonal boards have more shorts to store
+		// Diagonal boards have more shorts to store,一共有17条斜线（同方向）
 		this.dBoard1 = new short[2 * dimension - 1];
 		this.dBoard2 = new short[2 * dimension - 1];
 		// Move boards
@@ -401,11 +424,13 @@ public class OthelloState implements State {
 	/**
 	 * Set the standard start state for Othello.
 	 */
-	public void setStandardStartState() {
+	public void setStandardStartState() {//设置的是开局界面,可以任意添加开局界面
 		this.executeMove(false, (byte)3, (byte)3);
 		this.executeMove(false, (byte)4, (byte)4);
 		this.executeMove(true, (byte)3, (byte)4);
-		this.executeMove(true, (byte)4, (byte)3);		
+		this.executeMove(true, (byte)4, (byte)3);
+//		this.executeMove(true,(byte)5,(byte)5);
+//		this.executeMove(true,(byte)4,(byte)5);
 		this.generateMoveBoards();
 	}
 	
@@ -413,7 +438,7 @@ public class OthelloState implements State {
 	@Override
 	public int compareTo(State state) {
 		float heuristic = this.heuristic() - state.heuristic();
-		return heuristic >= 0 ? (int)Math.ceil(heuristic) : (int)Math.floor(heuristic);
+		return heuristic >= 0 ? (int)Math.ceil(heuristic) : (int)Math.floor(heuristic);//ceil是向上取整，floor是向下取整
 	}
 	
 	/**
@@ -436,7 +461,7 @@ public class OthelloState implements State {
 	 * @param y     The y-coordinate of the spot.
 	 * @return The line index used for this spot.
 	 */
-	private static byte getLineIndex(byte board, byte x, byte y) {
+	private static byte getLineIndex(byte board, byte x, byte y) {//board这个参数只是用来表示是hboard/vboard/dboard1/dboard2
 		if (board == 0) return x;
 		if (board == 1) return y;
 		if (board == 2) return (byte)(x + y);
@@ -496,7 +521,8 @@ public class OthelloState implements State {
 			return true;
 		}
 		// Get current lines on bit-board
-		short[] lines = this.getLines(x, y);
+		short[] lines = this.getLines(x, y);//获取水平，左斜右斜4条线
+		//System.out.println("length"+lines.length);
 		// Check all bit-boards
 		for (byte i = 0; i < 4; i++) {
 			byte index = getIndex(i, x, y);
@@ -770,7 +796,7 @@ public class OthelloState implements State {
 			winconstant = 0;
 			break;
 		}
-		return this.pieceDifferential() +//
+		return this.pieceDifferential() +
 		   8 * this.moveDifferential() +
 		  300 * this.cornerDifferential() +
 		   1 * this.stabilityDifferential() + 
@@ -886,13 +912,14 @@ public class OthelloState implements State {
 	 * If two objects are equal, then they must have the same hash code.
 	 * @return An integer hash code for this OthelloState.
 	 */
+	//该函数从未被使用
 	@Override
 	public int hashCode() {
 		if (ZOBRIST_HASHING)
 			return hashValue;
 		else
-			return hBoard[3] << 16 | hBoard[4];
-		
+			return hBoard[3] << 16 | hBoard[4];//hBoard是一个16位的，而int型是32位的，由此将两个组合起来，行程独一无二的hashcode
+
 	}
 	
 	/**
@@ -901,14 +928,16 @@ public class OthelloState implements State {
 	 * @param other The Object to compare this one with.
 	 * @return True if equal; false otherwise.
 	 */
+	//该函数从未被使用
 	@Override
 	public boolean equals(Object other) {
-		OthelloState state = (OthelloState)other; 
+		OthelloState state = (OthelloState)other;
 		if (this.move != state.move) return false;
 		return Arrays.equals(this.hBoard, state.hBoard);
 	}
 	
 	/** {@inheritDoc} */
+	//该函数从未被使用过
 	@Override
 	public String identifier() {
 		BigInteger integer = BigInteger.ZERO;

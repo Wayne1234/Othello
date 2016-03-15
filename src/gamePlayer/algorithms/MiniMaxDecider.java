@@ -52,18 +52,19 @@ public class MiniMaxDecider implements Decider {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Action decide(State state) {
 		// Choose randomly between equally good options
-		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
-		//System.out.println("value:"+value);
+		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;//当机器先时，是nega，人先时posi
+		System.out.println("value:"+value);
 		List<Action> bestActions = new ArrayList<Action>();
 		// Iterate!
 		int flag = maximize ? 1 : -1;
-		for (Action action : state.getActions()) {
+		for (Action action : state.getActions()) {//对所有的候选action，进行遍历，这里的action是一个临时变量，用于遍历
 			try {
 				// Algorithm!
-				State newState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);//真正的决策部分
+				State newState = action.applyTo(state);//我们将这个action应用到当前的局面上
+				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);//真正的决策部分，获得新的评估分数
 				// Better candidates?
-				if (flag * newValue > flag * value) {
+				if (flag * newValue > flag * value) {//用更高的value替代原有的value
+					System.out.println("value:"+value+"  "+"newValue:"+newValue);
 					value = newValue;
 					bestActions.clear();
 				}
@@ -89,17 +90,17 @@ public class MiniMaxDecider implements Decider {
 	 * @return The best point count we can get on this branch of the state space to the specified depth.
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public float miniMaxRecursor(State state, int depth, boolean maximize) {
+	public float miniMaxRecursor(State state, int depth, boolean maximize) {//注意，这里的depth是当前遍历的深度，而不是我们设定的深度
 		// Has this state already been computed?
-		if (computedStates.containsKey(state)) 
+		if (computedStates.containsKey(state)) //计算过的state就不计算了
                     // Return the stored result
                     return computedStates.get(state);
 		// Is this state done?
-		if (state.getStatus() != Status.Ongoing)
+		if (state.getStatus() != Status.Ongoing)//Status是一个enum变量，包含了谁在下，状态（ongoing），和draw
                     // Store and return
-                    return finalize(state, state.heuristic());
+                    return finalize(state, state.heuristic());//这个函数目前看跟没写一样，就是返回heuristic()函数计算出来的value值
 		// Have we reached the end of the line?
-		if (depth == this.depth)
+		if (depth == this.depth)//到达深度以后，同样返回value
                     //Return the heuristic value
                     return state.heuristic();
                 
@@ -107,11 +108,11 @@ public class MiniMaxDecider implements Decider {
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
 		int flag = maximize ? 1 : -1;
 		List<Action> test = state.getActions();
-		for (Action action : test) {
+		for (Action action : test) {//增强for循环的遍历方法，只能读取List中的内容，无法对List做修改
 			// Check it. Is it better? If so, keep it.
 			try {
-				State childState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);
+				State childState = action.applyTo(state);//childstate，由当前state延伸出来的状态
+				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);//这儿就是递归的时候，下一深度的入口
 				//Record the best value
                                 if (flag * newValue > flag * value) 
                                     value = newValue;

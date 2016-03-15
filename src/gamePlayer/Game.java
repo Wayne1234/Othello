@@ -11,7 +11,7 @@ import gamePlayer.State.Status;
  */
 public class Game {
 	
-	private static final boolean PRINT = false;
+	private static final boolean PRINT = true;
 	// The two players
 	private Decider playerOne;
 	private Decider playerTwo;

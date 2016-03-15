@@ -10,7 +10,8 @@ import gamePlayer.InvalidActionException;
  * @since Sat April 23 2011
  * @version CSE 473
  */
-public class OthelloAction implements Action<OthelloState> {
+//整个文件实际上都是基于State文件，只不过封装调用而已
+public class OthelloAction implements Action<OthelloState> {//Action，每一步动作用三个变量表示即可，谁下的，下在哪儿。
 	
 	// Which player are we?
 	private boolean player;
@@ -33,7 +34,7 @@ public class OthelloAction implements Action<OthelloState> {
 	
 	/** {@inheritDoc }*/
 	@Override
-	public boolean validOn(OthelloState input) {
+	public boolean validOn(OthelloState input) {//通过调用moveIsValid来看某一个动作是不是有效
 		if (this.player != input.move) return false;
 		return input.moveIsValid(this.x, this.y, this.player);
 		
@@ -41,7 +42,7 @@ public class OthelloAction implements Action<OthelloState> {
 	
 	/** {@inheritDoc }*/
 	@Override
-	public OthelloState applyTo(OthelloState input) throws InvalidActionException {
+	public OthelloState applyTo(OthelloState input) throws InvalidActionException {//应用操作
 		if (this.player != input.move) return null;
 		return input.childOnMove(x, y);
 	}
