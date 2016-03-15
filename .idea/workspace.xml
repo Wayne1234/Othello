@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91372266-c79e-4157-8b33-4f842e99ef76" name="Default" comment="Update2">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/ActionValuePair.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider$EntryType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider$OutOfTimeException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider$SearchNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider$SearchStatistics.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MTDDecider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/TranspositionTable.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/Game.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/Game.class" />
+    <list default="true" id="91372266-c79e-4157-8b33-4f842e99ef76" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/GamePanel$2.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/GamePanel$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/Othello$1.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/Othello$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/Othello.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/Othello.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/OthelloAction.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/OthelloAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState$1.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/Game.java" afterPath="$PROJECT_DIR$/src/gamePlayer/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" afterPath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/othello/Othello.java" afterPath="$PROJECT_DIR$/src/othello/Othello.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/othello/OthelloAction.java" afterPath="$PROJECT_DIR$/src/othello/OthelloAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/othello/OthelloState.java" afterPath="$PROJECT_DIR$/src/othello/OthelloState.java" />
     </list>
     <ignored path="Othello.iws" />
@@ -49,12 +35,23 @@
       <file leaf-file-name="Othello.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="315" column="5" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
+            <state vertical-scroll-proportion="-13.033334">
+              <caret line="325" column="23" selection-start-line="325" selection-start-column="16" selection-end-line="325" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+                <element signature="e#2872#2873#0" expanded="true" />
+                <element signature="e#2916#2917#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Decider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gamePlayer/Decider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,12 +66,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OthelloState.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OthelloState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5116279">
-              <caret line="795" column="28" selection-start-line="795" selection-start-column="28" selection-end-line="795" selection-end-column="28" />
+            <state vertical-scroll-proportion="303.06668">
+              <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
               <folding>
+                <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
+                <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
+                <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
+                <element signature="e#5836#5856#0" expanded="false" />
                 <element signature="method#getLines#0;class#OthelloState#0" expanded="false" />
                 <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
               </folding>
@@ -82,12 +83,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
-              <folding />
+            <state vertical-scroll-proportion="0.73333335">
+              <caret line="151" column="54" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+              <folding>
+                <element signature="e#3682#3754#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,10 +168,10 @@
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/TranspositionTable.java" />
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java" />
         <option value="$PROJECT_DIR$/src/gamePlayer/Game.java" />
-        <option value="$PROJECT_DIR$/src/othello/Othello.java" />
-        <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
         <option value="$PROJECT_DIR$/src/othello/OthelloAction.java" />
         <option value="$PROJECT_DIR$/src/othello/OthelloState.java" />
+        <option value="$PROJECT_DIR$/src/othello/Othello.java" />
+        <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
       </list>
     </option>
   </component>
@@ -185,10 +188,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="112" />
+    <option name="y" value="50" />
+    <option name="width" value="1337" />
+    <option name="height" value="1037" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -215,7 +218,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,6 +270,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="othello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Othello.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Othello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Othello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gamePlayer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -294,8 +320,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,7 +328,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IDEA/Othello" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -807,7 +832,8 @@
       <workItem from="1457684176053" duration="9090000" />
       <workItem from="1457797107877" duration="2630000" />
       <workItem from="1457973146107" duration="851000" />
-      <workItem from="1458022024561" duration="8238000" />
+      <workItem from="1458022024561" duration="11085000" />
+      <workItem from="1458053266944" duration="7801000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1457180371667</created>
@@ -821,15 +847,21 @@
       <option name="project" value="LOCAL" />
       <updated>1457439467648</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update3">
+      <created>1458037231219</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1458037231219</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79228000" />
+    <option name="totallyTimeSpent" value="89876000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="112" y="50" width="1337" height="1037" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -838,10 +870,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30010834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3561947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15565032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35427952" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -895,10 +927,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Update3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -955,7 +990,8 @@
           <caret line="277" column="45" selection-start-line="277" selection-start-column="33" selection-end-line="277" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,6 +1009,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
+            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="e#5836#5856#0" expanded="false" />
             <element signature="method#getLines#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
           </folding>
@@ -1021,7 +1061,8 @@
           <caret line="277" column="45" selection-start-line="277" selection-start-column="33" selection-end-line="277" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1039,6 +1080,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
+            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="e#5836#5856#0" expanded="false" />
             <element signature="method#getLines#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
           </folding>
@@ -1073,7 +1118,8 @@
           <caret line="277" column="45" selection-start-line="277" selection-start-column="33" selection-end-line="277" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1091,6 +1137,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
+            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="e#5836#5856#0" expanded="false" />
             <element signature="method#getLines#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
           </folding>
@@ -1125,7 +1175,8 @@
           <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1608,13 +1659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Decider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidActionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1631,26 +1675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Othello.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1662,14 +1690,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
+    <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="315" column="5" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-          </folding>
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Decider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,21 +1714,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/State.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5116279">
-          <caret line="795" column="28" selection-start-line="795" selection-start-column="28" selection-end-line="795" selection-end-column="28" />
+        <state vertical-scroll-proportion="303.06668">
+          <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
           <folding>
+            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
+            <element signature="e#5836#5856#0" expanded="false" />
             <element signature="method#getLines#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.033334">
+          <caret line="325" column="23" selection-start-line="325" selection-start-column="16" selection-end-line="325" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2872#2873#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73333335">
+          <caret line="151" column="54" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+          <folding>
+            <element signature="e#3682#3754#0" expanded="false" />
           </folding>
         </state>
       </provider>

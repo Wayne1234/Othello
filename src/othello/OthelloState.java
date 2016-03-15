@@ -189,7 +189,9 @@ public class OthelloState implements State {
 	 * @return A short representing only the changed spots.
 	 */
 	private static short getFlippedSpots(short line, short newLine, byte index) {//检测的是index位置上的数字有没有变化
+		//System.out.println(lineToString(line)+" "+lineToString(newLine )+" index="+index);
 		short mask = (short)~(3 << (index * 2));
+		//System.out.println("getFlippedSpots: "+(short)((newLine ^ line) & mask));
 		return (short)((newLine ^ line) & mask);
 	}
 	

@@ -6,6 +6,7 @@ import gamePlayer.InvalidActionException;
 import gamePlayer.State;
 import gamePlayer.State.Status;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -53,7 +54,7 @@ public class MiniMaxDecider implements Decider {
 	public Action decide(State state) {
 		// Choose randomly between equally good options
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;//当机器先时，是nega，人先时posi
-		System.out.println("value:"+value);
+		//System.out.println("value:"+value);
 		List<Action> bestActions = new ArrayList<Action>();
 		// Iterate!
 		int flag = maximize ? 1 : -1;
@@ -61,10 +62,11 @@ public class MiniMaxDecider implements Decider {
 			try {
 				// Algorithm!
 				State newState = action.applyTo(state);//我们将这个action应用到当前的局面上
-				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);//真正的决策部分，获得新的评估分数
+				float newValue = this.miniMaxRecursor(newState, Float.NEGATIVE_INFINITY,
+						Float.POSITIVE_INFINITY, 1, !this.maximize);//真正的决策部分，获得新的评估分数
 				// Better candidates?
 				if (flag * newValue > flag * value) {//用更高的value替代原有的value
-					System.out.println("value:"+value+"  "+"newValue:"+newValue);
+					//System.out.println("value:"+value+"  "+"newValue:"+newValue);
 					value = newValue;
 					bestActions.clear();
 				}
@@ -90,36 +92,67 @@ public class MiniMaxDecider implements Decider {
 	 * @return The best point count we can get on this branch of the state space to the specified depth.
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public float miniMaxRecursor(State state, int depth, boolean maximize) {//注意，这里的depth是当前遍历的深度，而不是我们设定的深度
-		// Has this state already been computed?
-		if (computedStates.containsKey(state)) //计算过的state就不计算了
-                    // Return the stored result
-                    return computedStates.get(state);
+	public float miniMaxRecursor(State state, float alpha, float beta,int depth, boolean maximize) {//注意，这里的depth是当前遍历的深度，而不是我们设定的深度// Has this state already been computed?
+//		if (computedStates.containsKey(state)) //计算过的state就不计算了
+//                    // Return the stored result
+//                    return computedStates.get(state);
+//		// Is this state done?
+//		if (state.getStatus() != Status.Ongoing)//Status是一个enum变量，包含了谁在下，状态（ongoing），和draw
+//                    // Store and return
+//                    return finalize(state, state.heuristic());//这个函数目前看跟没写一样，就是返回heuristic()函数计算出来的value值
+//		// Have we reached the end of the line?
+//		if (depth == this.depth)//到达深度以后，同样返回value
+//                    //Return the heuristic value
+//                    return state.heuristic();
+//
+//		// If not, recurse further. Identify the best actions to take.
+//		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
+//		int flag = maximize ? 1 : -1;
+//		List<Action> test = state.getActions();
+//		for (Action action : test) {//增强for循环的遍历方法，只能读取List中的内容，无法对List做修改
+//			// Check it. Is it better? If so, keep it.
+//			try {
+//				State childState = action.applyTo(state);//childstate，由当前state延伸出来的状态
+//				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);//这儿就是递归的时候，下一深度的入口
+//				//Record the best value
+//                                if (flag * newValue > flag * value)
+//                                    value = newValue;
+//			} catch (InvalidActionException e) {
+//                                //Should not go here
+//				throw new RuntimeException("Invalid action!");
+//			}
+//		}
+//		// Store so we don't have to compute it again.
+//		return finalize(state, value);
+		if (computedStates.containsKey(state))
+			return computedStates.get(state);
 		// Is this state done?
-		if (state.getStatus() != Status.Ongoing)//Status是一个enum变量，包含了谁在下，状态（ongoing），和draw
-                    // Store and return
-                    return finalize(state, state.heuristic());//这个函数目前看跟没写一样，就是返回heuristic()函数计算出来的value值
+		if (state.getStatus() != Status.Ongoing)
+			return finalize(state, state.heuristic());
 		// Have we reached the end of the line?
-		if (depth == this.depth)//到达深度以后，同样返回value
-                    //Return the heuristic value
-                    return state.heuristic();
-                
+		if (depth == this.depth)
+			return state.heuristic();
 		// If not, recurse further. Identify the best actions to take.
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
 		int flag = maximize ? 1 : -1;
 		List<Action> test = state.getActions();
-		for (Action action : test) {//增强for循环的遍历方法，只能读取List中的内容，无法对List做修改
+		for (Action action : test) {
 			// Check it. Is it better? If so, keep it.
 			try {
-				State childState = action.applyTo(state);//childstate，由当前state延伸出来的状态
-				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);//这儿就是递归的时候，下一深度的入口
-				//Record the best value
-                                if (flag * newValue > flag * value) 
-                                    value = newValue;
+				State childState = action.applyTo(state);
+				float newValue = this.miniMaxRecursor(childState, alpha, beta, depth + 1, !maximize);
+				//if (DEBUG) GraphVizPrinter.setRelation(childState, newValue, state);
+				if (flag * newValue > flag * value) value = newValue;
 			} catch (InvalidActionException e) {
-                                //Should not go here
 				throw new RuntimeException("Invalid action!");
 			}
+			// A-B prunning here
+			System.out.println("A-B prunning here! "+"depth="+depth);
+			float p = maximize ? beta : alpha;
+			if (flag * value > flag * p) return value;
+			// 更新 alpha/beta 值
+			if (maximize && value > alpha) alpha = value;
+			else if (!maximize && value < beta) beta = value;
 		}
 		// Store so we don't have to compute it again.
 		return finalize(state, value);
