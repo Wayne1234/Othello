@@ -784,7 +784,7 @@ public class OthelloState implements State {
 	/** {@inheritDoc} */
 	@Override
 	public float heuristic() {
-		//System.out.printf("%f %f %f %f\n",this.pieceDifferential(), this.moveDifferential(), this.cornerDifferential(), this.stabilityDifferential());
+		//前期的估值函数，前期估值要注意自己的子要少，稳定子可以不估算，大概到40手之后才会出现(设定30手)
 		Status s = this.getStatus();
 		int winconstant = 0;
 		switch (s) {
@@ -798,13 +798,39 @@ public class OthelloState implements State {
 			winconstant = 0;
 			break;
 		}
-		return this.pieceDifferential() +
-		   8 * this.moveDifferential() +
-		  300 * this.cornerDifferential() +
-		   1 * this.stabilityDifferential() + 
-		   winconstant;
+		float value=0;
+		value= -2*this.pieceDifferential() + 8 * this.moveDifferential() +//行动力参数
+				300 * this.cornerDifferential() + winconstant;
+		//System.out.println("heuristic value:"+value);
+		return value;
 	}
-	
+
+	public float heuristic2() {//后期的估值函数
+		Status s = this.getStatus();
+		int winconstant = 0;
+		switch (s) {
+			case PlayerOneWon:
+				winconstant = 5000;
+				break;
+			case PlayerTwoWon:
+				winconstant = -5000;
+				break;
+			default:
+				winconstant = 0;
+				break;
+		}
+		float value=0;
+		value=this.pieceDifferential() +
+				8 * this.moveDifferential() +//行动力参数
+				300 * this.cornerDifferential() +//四个角的参数
+				1 * this.stabilityDifferential() + //稳定子参数
+				winconstant;
+		//System.out.println("heuristic2 value:"+value);
+		return value;
+	}
+
+
+
 	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings({ "rawtypes" })

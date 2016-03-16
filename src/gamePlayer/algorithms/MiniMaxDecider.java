@@ -30,7 +30,8 @@ public class MiniMaxDecider implements Decider {
 	private Map<State, Float> computedStates;
 	// Used to generate a graph of the search space for each turn in SVG format
 	private static final boolean DEBUG = false;
-	
+
+	private static int COUNT=0;
 	/**
 	 * Initialize this MiniMaxDecider. 
 	 * @param maximize Are we maximizing or minimizing on this turn? True if the former.
@@ -52,6 +53,8 @@ public class MiniMaxDecider implements Decider {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Action decide(State state) {
+		COUNT++;
+		System.out.println("COUNT:"+COUNT);
 		// Choose randomly between equally good options
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;//当机器先时，是nega，人先时posi
 		//System.out.println("value:"+value);
@@ -92,46 +95,21 @@ public class MiniMaxDecider implements Decider {
 	 * @return The best point count we can get on this branch of the state space to the specified depth.
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public float miniMaxRecursor(State state, float alpha, float beta,int depth, boolean maximize) {//注意，这里的depth是当前遍历的深度，而不是我们设定的深度// Has this state already been computed?
-//		if (computedStates.containsKey(state)) //计算过的state就不计算了
-//                    // Return the stored result
-//                    return computedStates.get(state);
-//		// Is this state done?
-//		if (state.getStatus() != Status.Ongoing)//Status是一个enum变量，包含了谁在下，状态（ongoing），和draw
-//                    // Store and return
-//                    return finalize(state, state.heuristic());//这个函数目前看跟没写一样，就是返回heuristic()函数计算出来的value值
-//		// Have we reached the end of the line?
-//		if (depth == this.depth)//到达深度以后，同样返回value
-//                    //Return the heuristic value
-//                    return state.heuristic();
-//
-//		// If not, recurse further. Identify the best actions to take.
-//		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
-//		int flag = maximize ? 1 : -1;
-//		List<Action> test = state.getActions();
-//		for (Action action : test) {//增强for循环的遍历方法，只能读取List中的内容，无法对List做修改
-//			// Check it. Is it better? If so, keep it.
-//			try {
-//				State childState = action.applyTo(state);//childstate，由当前state延伸出来的状态
-//				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);//这儿就是递归的时候，下一深度的入口
-//				//Record the best value
-//                                if (flag * newValue > flag * value)
-//                                    value = newValue;
-//			} catch (InvalidActionException e) {
-//                                //Should not go here
-//				throw new RuntimeException("Invalid action!");
-//			}
-//		}
-//		// Store so we don't have to compute it again.
-//		return finalize(state, value);
+	public float miniMaxRecursor(State state, float alpha, float beta,int depth, boolean maximize) {
+		//注意，这里的depth是当前遍历的深度，而不是我们设定的深度
+		// Has this state already been computed?
 		if (computedStates.containsKey(state))
 			return computedStates.get(state);
 		// Is this state done?
-		if (state.getStatus() != Status.Ongoing)
+		if (state.getStatus() != Status.Ongoing&&COUNT<=15)
 			return finalize(state, state.heuristic());
 		// Have we reached the end of the line?
-		if (depth == this.depth)
+		if (state.getStatus() != Status.Ongoing&&COUNT>15)
+			return finalize(state, state.heuristic2());
+		if (depth == this.depth&&COUNT<=15)
 			return state.heuristic();
+		if (depth == this.depth&&COUNT>15)
+			return state.heuristic2();
 		// If not, recurse further. Identify the best actions to take.
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
 		int flag = maximize ? 1 : -1;
@@ -141,7 +119,6 @@ public class MiniMaxDecider implements Decider {
 			try {
 				State childState = action.applyTo(state);
 				float newValue = this.miniMaxRecursor(childState, alpha, beta, depth + 1, !maximize);
-				//if (DEBUG) GraphVizPrinter.setRelation(childState, newValue, state);
 				if (flag * newValue > flag * value) value = newValue;
 			} catch (InvalidActionException e) {
 				throw new RuntimeException("Invalid action!");

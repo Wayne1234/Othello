@@ -36,7 +36,8 @@ public interface State extends Comparable<State>, Cloneable {
 	 * @return The estimated value of this State.
 	 */
 	public float heuristic();
-	
+
+	public float heuristic2();
 	/**
 	 * Return the Status of this game at this State.
 	 * @return The current Status.
