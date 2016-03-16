@@ -319,14 +319,11 @@ public class Othello extends JFrame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				// 0 - Human plays first, 1000ms - time for computer decision (for MTDDecider)
-				Othello frame = new Othello(0, 1000, 6);
+				Othello frame = new Othello(1, 1000, 8);
 			}
 		});
-
 	}
-
 }

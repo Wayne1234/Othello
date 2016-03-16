@@ -147,7 +147,7 @@ public class MiniMaxDecider implements Decider {
 				throw new RuntimeException("Invalid action!");
 			}
 			// A-B prunning here
-			System.out.println("A-B prunning here! "+"depth="+depth);
+			//System.out.println("A-B prunning here! "+"depth="+depth);
 			float p = maximize ? beta : alpha;
 			if (flag * value > flag * p) return value;
 			// 更新 alpha/beta 值
