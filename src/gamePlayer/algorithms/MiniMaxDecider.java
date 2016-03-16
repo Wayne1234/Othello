@@ -29,7 +29,7 @@ public class MiniMaxDecider implements Decider {
 	// HashMap to avoid recalculating States
 	private Map<State, Float> computedStates;
 	// Used to generate a graph of the search space for each turn in SVG format
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 	
 	/**
 	 * Initialize this MiniMaxDecider. 

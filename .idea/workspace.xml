@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91372266-c79e-4157-8b33-4f842e99ef76" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/Game.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/GamePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/Othello$1.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/Othello$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/Othello.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/Othello.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/Game.java" afterPath="$PROJECT_DIR$/src/gamePlayer/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" afterPath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
@@ -31,11 +36,31 @@
       <file leaf-file-name="Othello.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.810345">
-              <caret line="164" column="21" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="330" column="54" selection-start-line="330" selection-start-column="54" selection-end-line="330" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionValuePair.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gamePlayer/Action.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,23 +75,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Othello.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Othello.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OthelloState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
+              <caret line="134" column="30" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="30" />
               <folding>
-                <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
                 <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
                 <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
                 <element signature="e#5836#5856#0" expanded="false" />
@@ -77,13 +91,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="149" column="14" selection-start-line="149" selection-start-column="14" selection-end-line="149" selection-end-column="14" />
+            <state vertical-scroll-proportion="-0.06666667">
+              <caret line="64" column="47" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="47" />
               <folding>
-                <element signature="e#3682#3754#0" expanded="false" />
+                <element signature="e#3683#3755#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,37 +117,27 @@
         <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gamePlayer/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47674417">
-              <caret line="52" column="31" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="23" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvalidActionException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidActionException.java">
+      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/ProgramFiles/JDK/src.zip!/java/lang/System.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvalidStateException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidStateException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -161,11 +165,11 @@
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/MTDDecider.java" />
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/TranspositionTable.java" />
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java" />
-        <option value="$PROJECT_DIR$/src/othello/OthelloAction.java" />
         <option value="$PROJECT_DIR$/src/othello/OthelloState.java" />
+        <option value="$PROJECT_DIR$/src/gamePlayer/Game.java" />
+        <option value="$PROJECT_DIR$/src/othello/OthelloAction.java" />
         <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
         <option value="$PROJECT_DIR$/src/othello/Othello.java" />
-        <option value="$PROJECT_DIR$/src/gamePlayer/Game.java" />
       </list>
     </option>
   </component>
@@ -182,9 +186,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="215" />
-    <option name="y" value="33" />
-    <option name="width" value="1165" />
+    <option name="x" value="830" />
+    <option name="y" value="39" />
+    <option name="width" value="1054" />
     <option name="height" value="942" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -212,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,6 +317,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -828,7 +832,8 @@
       <workItem from="1457973146107" duration="851000" />
       <workItem from="1458022024561" duration="11085000" />
       <workItem from="1458053266944" duration="7836000" />
-      <workItem from="1458112756158" duration="1188000" />
+      <workItem from="1458112756158" duration="1905000" />
+      <workItem from="1458128731359" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1457180371667</created>
@@ -854,15 +859,21 @@
       <option name="project" value="LOCAL" />
       <updated>1458061106200</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Speed Test">
+      <created>1458113985223</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1458113985223</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91099000" />
+    <option name="totallyTimeSpent" value="92856000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="215" y="33" width="1165" height="942" extended-state="0" />
-    <editor active="false" />
+    <frame x="830" y="39" width="1054" height="942" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -871,12 +882,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36283186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22249691" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27511314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39555007" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -887,6 +897,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34669557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -930,7 +941,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Update3" />
     <MESSAGE value="Alpha Beta prunning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alpha Beta prunning" />
+    <MESSAGE value="Speed Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Speed Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -943,13 +955,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MTDDecider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1009,7 +1014,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
-            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
             <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
             <element signature="e#5836#5856#0" expanded="false" />
@@ -1078,7 +1082,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
-            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
             <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
             <element signature="e#5836#5856#0" expanded="false" />
@@ -1133,7 +1136,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="909" column="39" selection-start-line="909" selection-start-column="39" selection-end-line="909" selection-end-column="39" />
           <folding>
-            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
             <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
             <element signature="e#5836#5856#0" expanded="false" />
@@ -1625,13 +1627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MTDDecider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1646,18 +1641,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidActionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1665,7 +1652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1673,7 +1659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1684,10 +1669,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/ProgramFiles/JDK/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/ActionValuePair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/Decider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="16" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1700,12 +1717,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
+          <caret line="134" column="30" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="30" />
           <folding>
-            <element signature="method#getSpotAsChar#0;class#OthelloState#0" expanded="false" />
             <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
             <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
             <element signature="e#5836#5856#0" expanded="false" />
@@ -1715,39 +1739,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="149" column="14" selection-start-line="149" selection-start-column="14" selection-end-line="149" selection-end-column="14" />
-          <folding>
-            <element signature="e#3682#3754#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.810345">
-          <caret line="164" column="21" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="330" column="54" selection-start-line="330" selection-start-column="54" selection-end-line="330" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47674417">
-          <caret line="52" column="31" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="41" />
-          <folding />
+        <state vertical-scroll-proportion="-0.06666667">
+          <caret line="64" column="47" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="47" />
+          <folding>
+            <element signature="e#3683#3755#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

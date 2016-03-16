@@ -50,7 +50,7 @@ public class Game {
 		// Try to apply it
 		try {
 			currentState = action.applyTo(currentState);
-			if (PRINT) System.out.println(currentState+"|");
+			//if (PRINT) System.out.println(currentState+"|");
 			//System.out.println(currentState);
 			//System.out.println("Heuristic value: "+currentState.heuristic());
 		} catch (InvalidActionException e) {
