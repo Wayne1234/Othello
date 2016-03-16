@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91372266-c79e-4157-8b33-4f842e99ef76" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/State.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/State.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" afterPath="$PROJECT_DIR$/out/production/Othello/gamePlayer/algorithms/MiniMaxDecider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState.class" afterPath="$PROJECT_DIR$/out/production/Othello/othello/OthelloState.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/State.java" afterPath="$PROJECT_DIR$/src/gamePlayer/State.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" afterPath="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/othello/OthelloState.java" afterPath="$PROJECT_DIR$/src/othello/OthelloState.java" />
     </list>
     <ignored path="Othello.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OthelloState.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OthelloState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.354067">
-              <caret line="785" column="26" selection-start-line="785" selection-start-column="17" selection-end-line="785" selection-end-column="26" />
+            <state vertical-scroll-proportion="-247.96552">
+              <caret line="799" column="9" selection-start-line="799" selection-start-column="9" selection-end-line="799" selection-end-column="9" />
               <folding>
                 <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
                 <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
@@ -77,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MiniMaxDecider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2413793">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.90749604">
+              <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -864,7 +865,7 @@
       <workItem from="1458053266944" duration="7836000" />
       <workItem from="1458112756158" duration="1905000" />
       <workItem from="1458128731359" duration="4475000" />
-      <workItem from="1458139532150" duration="4441000" />
+      <workItem from="1458139532150" duration="5417000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1457180371667</created>
@@ -902,11 +903,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458129788904</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="heuristic update">
+      <created>1458143990969</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1458143990969</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100732000" />
+    <option name="totallyTimeSpent" value="101708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -980,7 +987,8 @@
     <MESSAGE value="Alpha Beta prunning" />
     <MESSAGE value="Speed Test" />
     <MESSAGE value="Time Counting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Time Counting" />
+    <MESSAGE value="heuristic update" />
+    <option name="LAST_COMMIT_MESSAGE" value="heuristic update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1812,18 +1820,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2413793">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.354067">
-          <caret line="785" column="26" selection-start-line="785" selection-start-column="17" selection-end-line="785" selection-end-column="26" />
+        <state vertical-scroll-proportion="-247.96552">
+          <caret line="799" column="9" selection-start-line="799" selection-start-column="9" selection-end-line="799" selection-end-column="9" />
           <folding>
             <element signature="method#setSpotOnLine#0;class#OthelloState#0" expanded="false" />
             <element signature="method#combineIntoLine#0;class#OthelloState#0" expanded="false" />
@@ -1832,6 +1832,14 @@
             <element signature="method#setLine#0;class#OthelloState#0" expanded="false" />
             <element signature="e#27968#28001#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.90749604">
+          <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

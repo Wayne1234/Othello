@@ -32,6 +32,8 @@ public class MiniMaxDecider implements Decider {
 	private static final boolean DEBUG = false;
 
 	private static int COUNT=0;
+
+	private int finaldepth=10;
 	/**
 	 * Initialize this MiniMaxDecider. 
 	 * @param maximize Are we maximizing or minimizing on this turn? True if the former.
@@ -69,12 +71,12 @@ public class MiniMaxDecider implements Decider {
 						Float.POSITIVE_INFINITY, 1, !this.maximize);//真正的决策部分，获得新的评估分数
 				// Better candidates?
 				if (flag * newValue > flag * value) {//用更高的value替代原有的value
-					//System.out.println("value:"+value+"  "+"newValue:"+newValue);
 					value = newValue;
 					bestActions.clear();
 				}
 				// Add it to the list of candidates?
 				if (flag * newValue >= flag * value) bestActions.add(action);
+
 			} catch (InvalidActionException e) {
 				throw new RuntimeException("Invalid action!");
 			}
@@ -98,6 +100,11 @@ public class MiniMaxDecider implements Decider {
 	public float miniMaxRecursor(State state, float alpha, float beta,int depth, boolean maximize) {
 		//注意，这里的depth是当前遍历的深度，而不是我们设定的深度
 		// Has this state already been computed?
+//		if(depth>6)
+//			System.out.println("depth:"+depth);
+		if(COUNT>20) {
+			this.depth = finaldepth;
+		}
 		if (computedStates.containsKey(state))
 			return computedStates.get(state);
 		// Is this state done?
